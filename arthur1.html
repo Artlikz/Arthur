@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        #code-container {
+            margin-top: 150px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+        #cpp-code {
+            font-size: 18px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+        #roses {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        @keyframes heartBeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .heart {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('123.png');
+            background-size: cover;
+            animation: heartBeat 3s infinite ease-in-out;
+        }
+        .petal {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url('png.png');
+            background-size: cover;
+            animation: fall 6s linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 100%;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="code-container">
+        <h1 style="font-size: 40px;">HAPPY 3RD ANNIVERSARY
+            <br> & HAPPY 19th BIRTHDAY, MY LOVE!!</h1>
+        <p style="font-size: 24px;">Enjoy your day!!</p>
+        <pre id="cpp-code">
+I LOVE YOU ALWAYS LOVEY!
+           
+            
+        </pre>
+    </div>
+    <img id="roses" src="PINK1.avif" alt="Roses">
+    <div class="heart" style="top: 20%; left: 40%;"></div>
+    <div class="heart" style="top: 25%; left: 60%;"></div>
+    <div class="heart" style="top: 30%; left: 20%;"></div>
+    <div class="heart" style="top: 40%; left: 80%;"></div>
+    <div class="heart" style="top: 50%; left: 50%;"></div>
+    <div class="heart" style="top: 60%; left: 30%;"></div>
+    <div class="heart" style="top: 70%; left: 70%;"></div>
+    <div class="heart" style="top: 80%; left: 40%;"></div>
+    <div class="heart" style="top: 90%; left: 60%;"></div>
+    <div class="heart" style="top: 85%; left: 20%;"></div>
+    <div class="heart" style="top: 45%; left: 80%;"></div>
+    <div class="heart" style="top: 65%; left: 50%;"></div>
+    <div class="heart" style="top: 35%; left: 30%;"></div>
+    <div class="heart" style="top: 55%; left: 70%;"></div>
+    <div class="heart" style="top: 75%; left: 40%;"></div>
+    <div class="heart" style="top: 25%; left: 60%;"></div>
+    <script>
+        // Function to create falling rose petals
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * window.innerWidth + 'px';
+            document.body.appendChild(petal);
+
+            setTimeout(() => {
+                petal.remove();
+            }, 8000);
+        }
+
+        // Create falling rose petals every 0.3 seconds
+        setInterval(createPetal, 300);
+
+        // Play background music
+        const audio = new Audio('background_music.mp3');
+        audio.loop = true;
+        audio.volume = 0.2;
+        audio.play();
+    </script>
+    
+
+</body>
+</html>
